@@ -242,8 +242,9 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     const target = this.getAttribute('target');
+                    const isInternalLink = href && href.startsWith('#');
 
-                    if (href && href !== '#' && !href.startsWith('#') && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                    if (href && !isInternalLink && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
                         e.preventDefault();
                         document.body.classList.remove('loaded');
                         setTimeout(() => {
