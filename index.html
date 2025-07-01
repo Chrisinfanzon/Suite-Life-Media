@@ -221,8 +221,9 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     const target = this.getAttribute('target');
+                    const isInternalLink = href && href.startsWith('#');
 
-                    if (href && href !== '#' && !href.startsWith('#') && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                    if (href && !isInternalLink && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
                         e.preventDefault();
                         document.body.classList.remove('loaded');
                         setTimeout(() => {
@@ -236,6 +237,21 @@
                 if (event.persisted) {
                     document.body.classList.add('loaded');
                 }
+            });
+
+            // Smooth scroll for on-page links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
 
             // Script for mobile navigation hamburger menu
