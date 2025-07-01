@@ -1,0 +1,924 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: #F8F8F8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Pre-loader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader img {
+    height: 60px;
+    width: auto;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+
+/* Header and Navigation */
+header {
+    background-color: #ffffff;
+    padding: 0.5rem 5%;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0c1532;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c29a54;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #0c1532;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(12, 21, 50, 0.7), rgba(12, 21, 50, 0.7)), url('hero-vacation.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    text-align: center;
+    padding: 8rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* CTA Button Styles */
+.hero-cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background-color: #c29a54;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    border: 2px solid #c29a54;
+}
+
+.cta-button:hover {
+    background-color: #aE894D;
+    border-color: #aE894D;
+}
+
+.cta-button.secondary-cta {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.cta-button.secondary-cta:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+/* What We Do Section */
+.what-we-do-section {
+    padding: 4rem 5% 2rem 5%; /* Reduced bottom padding */
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0c1532;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+/* Interactive Playbook Flip Card Styles */
+.playbook-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 2rem auto 2rem auto;
+}
+
+.playbook-quadrant {
+    background-color: transparent;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px; /* For the 3D effect */
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.playbook-quadrant.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+    border: 2px solid #eef1f8;
+    color: #0c1532;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flip-card-front:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.quadrant-icon {
+    margin-bottom: 0.75rem;
+}
+
+.quadrant-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #0c1532;
+}
+
+.flip-card-front h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.flip-card-back {
+    background-color: #0c1532;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+}
+
+.flip-card-back h5 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    color: #c29a54;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Key Insights Section Styles */
+.key-insights-section {
+    padding: 4rem 5%;
+    background-color: #f8f8f8;
+}
+
+.insights-list {
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.insight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.insight-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delay */
+.insight-item:nth-child(2) { transition-delay: 0.1s; }
+.insight-item:nth-child(3) { transition-delay: 0.2s; }
+.insight-item:nth-child(4) { transition-delay: 0.3s; }
+.insight-item:nth-child(5) { transition-delay: 0.4s; }
+
+.insight-icon {
+    flex-shrink: 0;
+}
+
+.insight-icon svg {
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+}
+
+.insight-text h3 {
+    font-size: 1.25rem;
+    color: #0c1532;
+    margin: 0 0 0.25rem 0;
+}
+
+.insight-text p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.insight-text .data-highlight {
+    font-weight: 700;
+    color: #c29a54;
+}
+
+
+/* Custom Plan Section Styles */
+.custom-plan-section {
+    padding: 4rem 5%;
+    background-color: #ffffff; /* Changed for contrast */
+}
+
+.process-timeline {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* The vertical connecting line */
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 29px; /* Aligns with the center of the number circle */
+    width: 2px;
+    background-color: #eef1f8;
+    z-index: 1;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.process-step.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Staggered animation delay for process steps */
+.process-step:nth-child(2) { transition-delay: 0.2s; }
+.process-step:nth-child(3) { transition-delay: 0.4s; }
+
+.process-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0c1532;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 4px solid #f8f8f8;
+}
+
+.process-content h3 {
+    font-size: 1.75rem;
+    color: #0c1532;
+    margin: 0 0 0.5rem 0;
+}
+
+.process-content p {
+    margin: 0;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Contact CTA Section */
+.contact-cta-section {
+    background-color: #0c1532;
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.contact-cta-section h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-cta-section .data-callout {
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #ccc;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.data-callout .data-highlight {
+    font-weight: 700;
+    color: #c29a54;
+}
+
+.cta-button.large-cta {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background-color: #c29a54;
+    border-color: #c29a54;
+}
+
+.cta-button.large-cta:hover {
+    background-color: #aE894D;
+    border-color: #aE894D;
+}
+
+/* Story Page Specific Section Styles */
+.story-banner-image {
+    height: 350px;
+    background-image: url('story-banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.story-section-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.story-section-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0c1532;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.values-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid #ddd;
+}
+
+.values-section h3.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0c1532;
+    margin-bottom: 3rem;
+}
+
+.feature-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    /* Animation styles */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.feature-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delay for feature items */
+.feature-item:nth-child(1) { transition-delay: 0.1s; }
+.feature-item:nth-child(2) { transition-delay: 0.2s; }
+.feature-item:nth-child(3) { transition-delay: 0.3s; }
+.feature-item:nth-child(4) { transition-delay: 0.4s; }
+
+
+.feature-icon {
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.feature-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #c29a54;
+}
+
+.feature-text h3 {
+    font-size: 1.5rem;
+    color: #0c1532;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.feature-text p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* REFINED: Scorecard Page Styles */
+.scorecard-page-main {
+    padding-top: 90px; /* Add space for sticky bar */
+}
+
+.scorecard-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.scorecard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.scorecard-header h1 {
+    font-size: 2.8rem;
+    color: #0c1532;
+    margin-bottom: 1rem;
+}
+
+.scorecard-header p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.score-display-container {
+    position: sticky;
+    top: 75px; /* Height of the main header */
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 5%;
+}
+
+.score-display {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.score-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0c1532;
+    white-space: nowrap;
+}
+
+.progress-bar-background {
+    flex-grow: 1;
+    background-color: #eef1f8;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+    min-width: 150px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #E74C3C;
+    border-radius: 10px;
+    transition: width 0.4s, background-color 0.4s;
+}
+
+.score-feedback {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.score-feedback .feedback-level {
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.4s;
+    white-space: nowrap;
+}
+
+.opportunity-value-wrapper {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #E74C3C;
+    background-color: #fdecec;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.4s, color 0.4s, background-color 0.4s;
+}
+
+.opportunity-value-wrapper.visible {
+    opacity: 1;
+}
+
+.scorecard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Symmetrical 2x2 grid */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.scorecard-pillar {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scorecard-pillar h3 {
+    font-size: 1.5rem;
+    color: #0c1532;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eef1f8;
+    padding-bottom: 0.75rem;
+}
+
+.scorecard-item {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+/* Tooltip Styles */
+.scorecard-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0c1532;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+    margin-bottom: 8px;
+}
+
+.scorecard-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Hide default checkbox */
+.checkbox-label input {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 12px;
+    margin-top: 4px;
+    display: inline-block;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.checkbox-label:hover .custom-checkbox {
+    border-color: #c29a54;
+}
+
+/* Style for checked state */
+.checkbox-label input:checked + .custom-checkbox {
+    background-color: #c29a54;
+    border-color: #c29a54;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scorecard-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background-color: #0c1532;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.scorecard-footer h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.scorecard-footer p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #eee;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Sticky CTA Button */
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #c29a54;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sticky-cta:hover {
+    transform: scale(1.05);
+    background-color: #aE894D;
+}
+
+/* MOBILE & TABLET STYLES */
+@media (max-width: 768px) {
+    .score-display-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .scorecard-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 75px; /* Adjust based on your header height */
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .playbook-diagram {
+        max-width: 90%;
+        gap: 1rem;
+    }
+
+    .flip-card-front h4 {
+        font-size: 1rem;
+    }
+    .flip-card-back h5 {
+        font-size: 1.1rem;
+    }
+    .flip-card-back p {
+        font-size: 0.9rem;
+    }
+
+    .key-insights-section {
+        padding: 3rem 5%;
+    }
+
+    .insight-item {
+        gap: 1rem;
+    }
+
+    .insight-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .insight-text p {
+        font-size: 0.95rem;
+    }
+
+    .process-timeline::before {
+        left: 24px; /* Adjust for smaller screens */
+    }
+    .process-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    .process-content h3 {
+        font-size: 1.5rem;
+    }
+    .process-content p {
+        font-size: 1rem;
+    }
+
+    .scorecard-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card-front h4 {
+        font-size: 0.9rem;
+    }
+    .quadrant-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+    .flip-card-back {
+        padding: 1rem;
+    }
+    .flip-card-back h5 {
+        font-size: 1rem;
+    }
+    .flip-card-back p {
+        font-size: 0.8rem;
+    }
+}

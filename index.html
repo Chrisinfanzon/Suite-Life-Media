@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Life Media</title>
+    <!-- Note: Ensure the style.css file is in the same directory -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <img src="suite-life-logo.png" alt="Suite Life Media Logo Loading" onerror="this.style.display='none'">
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <!-- Note: Ensure the logo image is in the correct path -->
+            <a href="index.html" class="logo"><img src="suite-life-logo.png" alt="Suite Life Media Logo" onerror="this.style.display='none'"></a>
+            <div class="nav-links">
+                <a href="#our-approach">Our Playbook</a>
+                <a href="scorecard.html">Free Scorecard</a>
+                <a href="story.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>More Bookings. Better Guests.</h1>
+            <p>We build data-driven marketing systems that turn casual browsers into loyal guests for modern hotels and rentals.</p>
+            <div class="hero-cta-container">
+                <a href="contact.html" class="cta-button">Book a Free Consultation</a>
+                <a href="#our-approach" class="cta-button secondary-cta">See Our Playbook</a>
+            </div>
+        </section>
+
+        <section id="our-approach" class="what-we-do-section">
+            <h2 class="section-title">The New Playbook for Hospitality Marketing</h2>
+            <p class="section-subtitle">To win in today's market, you need a complete strategy. Our playbook integrates four critical areas to build a powerful, resilient brand. Click a pillar below to learn more.</p>
+
+            <!-- Interactive Four-Part Visual Framework with Flip Cards -->
+            <div class="playbook-diagram">
+                <!-- Card 1 -->
+                <div class="playbook-quadrant">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="quadrant-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM232,80.6a100,100,0,0,0-23.73-51,99.78,99.78,0,0,0-150.54,0A100,100,0,0,0,24,128a100.1,100.1,0,0,0,80.6,99.34,12,12,0,0,0,11.85-9.48,76.54,76.54,0,0,1,0-27.72,12,12,0,0,0-11.85-9.48A76.08,76.08,0,0,1,53.28,128a76,76,0,0,1,113-58.88,12,12,0,0,0,14-10.24A100.6,100.6,0,0,0,232,80.6Z"></path></svg>
+                            </div>
+                            <h4>Engage & Expand</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Engage & Expand</h5>
+                            <p>We discover what your ideal guests truly want by creating strategic organic content to expand your reach and build a loyal community.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="playbook-quadrant">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="quadrant-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M192,120a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,120Zm-64-48a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,72Zm114.39,94.39-38.69-38.7A88.16,88.16,0,1,0,112,208a87.29,87.29,0,0,0,52.68-16.69l38.7,38.69a12,12,0,0,0,17-17ZM40,120a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,120Z"></path></svg>
+                            </div>
+                            <h4>Amplify & Convert</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Amplify & Convert</h5>
+                            <p>We use data from your best organic content to fuel paid campaigns, ensuring your ad spend is laser-focused on converting high-intent travelers.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="playbook-quadrant">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="quadrant-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm44-92.42,2.42-5.9,5.9-2.42-5.9-2.42L172,104l-2.42,5.9-5.9,2.42,5.9,2.42ZM84,71.58l2.42,5.9,5.9,2.42-5.9-2.42L84,88l-2.42-5.9-5.9-2.42,5.9-2.42ZM136,88l-2.13,4.64-4.64,2.13,4.64,2.13L136,101.54,138.13,97,142.77,95l-4.64-2.13ZM90.17,131.17,112,153l22.83-21.83a12,12,0,0,1,17,17L134.83,166,152,183.17a12,12,0,0,1-17,17L118,183l-17,17-17-17-17,17a12,12,0,0,1-17-17L67.17,166,50.17,148.17a12,12,0,0,1,17-17L84,148.17l22.83-21.83A12,12,0,0,1,124,124,12,12,0,0,1,90.17,131.17Z"></path></svg>
+                            </div>
+                            <h4>Dazzle & Differentiate</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Dazzle & Differentiate</h5>
+                            <p>We leverage AI as a creative accelerator to develop stunning visuals with speed, ensuring your brand stays fresh and consistently stands out.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="playbook-quadrant">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="quadrant-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M208,40H48A24,24,0,0,0,24,64v72a88,88,0,0,0,176,0V64A24,24,0,0,0,208,40Zm-8,144a72,72,0,0,1-144,0V60.75A7.93,7.93,0,0,1,56,56H200a7.93,7.93,0,0,1,7.25,4.75ZM173.66,106.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L108,148.69l42.34-42.35A8,8,0,0,1,173.66,106.34Z"></path></svg>
+                            </div>
+                            <h4>Build Trust</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Master Your Reputation</h5>
+                            <p>We actively manage your online reviews and feedback, responding rapidly to build unshakable trust with future guests.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights Section -->
+        <section id="key-insights" class="key-insights-section">
+            <h2 class="section-title">Smart Moves for Modern Hoteliers</h2>
+            <p class="section-subtitle">Leverage these data-backed insights to gain a competitive edge.</p>
+            <div class="insights-list">
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                    </div>
+                    <div class="insight-text">
+                        <h3>Respond to Reviews</h3>
+                        <p>Hotels that reply to over 50% of guest reviews can see their booking conversion rates increase by as much as <span class="data-highlight">6%</span>.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                    </div>
+                    <div class="insight-text">
+                        <h3>Amplify Organic Winners</h3>
+                        <p>Using top-performing organic social posts as paid ads can lower customer acquisition costs by up to <span class="data-highlight">40%</span> by targeting proven content.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                    </div>
+                    <div class="insight-text">
+                        <h3>Prioritize Video Content</h3>
+                        <p>Hotel listings that feature high-quality video content receive up to <span class="data-highlight">4x</span> more inquiries than listings without video.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                    </div>
+                    <div class="insight-text">
+                        <h3>Use AI for Personalization</h3>
+                        <p>Leveraging AI to personalize guest communication can increase ancillary revenue by <span class="data-highlight">15%</span> and boost repeat bookings.</p>
+                    </div>
+                </div>
+                 <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                    </div>
+                    <div class="insight-text">
+                        <h3>Leverage First-Party Data</h3>
+                        <p>Marketing campaigns using your own guest data for targeting see a <span class="data-highlight">2-3x</span> improvement in ROI versus relying on third-party data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section id="our-process" class="custom-plan-section">
+            <h2 class="section-title">Our Process</h2>
+            <p class="section-subtitle">Your property is unique. Your marketing plan should be too. We build a tailored strategy based on your specific goals, following a clear and collaborative path to success.</p>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Discover</h3>
+                        <p>We start with a deep dive into your brand, your audience, and your goals. We listen to your story and analyze your data to understand exactly where you are and where you want to go.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>Strategize</h3>
+                        <p>We build a tailored marketing plan that can include any of our capabilities: social media management, paid advertising, custom content creation, or SEO—all designed to meet your specific needs.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Launch & Optimize</h3>
+                        <p>Execution is everything. We launch your custom plan, manage all the details, and provide clear, honest reporting on the results that truly matter: more guests and a stronger brand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-cta-section">
+            <h2>Ready for a Custom Plan?</h2>
+            <p class="data-callout">Did you know? <span class="data-highlight">81% of travelers</span> frequently or always read reviews before booking a hotel. Let's give them something great to talk about.</p>
+            <a href="contact.html" class="cta-button large-cta">Start the Conversation</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Suite Life Media</p>
+    </footer>
+
+    <a href="contact.html" class="sticky-cta">Book a Consultation</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pre-loader logic
+            const preloader = document.getElementById('preloader');
+            const allLinks = document.querySelectorAll('a[href]');
+
+            window.addEventListener('load', () => {
+                document.body.classList.add('loaded');
+            });
+
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const target = this.getAttribute('target');
+
+                    if (href && href !== '#' && !href.startsWith('#') && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                        e.preventDefault();
+                        document.body.classList.remove('loaded');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 500); // Match CSS transition time
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.add('loaded');
+                }
+            });
+
+            // Script for mobile navigation hamburger menu
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Script for interactive playbook flip cards
+            const quadrants = document.querySelectorAll('.playbook-quadrant');
+            quadrants.forEach(quadrant => {
+                quadrant.addEventListener('click', () => {
+                    const isFlipped = quadrant.classList.contains('is-flipped');
+                    quadrants.forEach(q => q.classList.remove('is-flipped'));
+                    if (!isFlipped) {
+                        quadrant.classList.add('is-flipped');
+                    }
+                });
+            });
+
+            // Script for scroll-triggered animations
+            const animatedItems = document.querySelectorAll('.insight-item, .process-step');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.2 // Trigger when 20% of the item is visible
+            });
+
+            animatedItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+
+</body>
+</html>

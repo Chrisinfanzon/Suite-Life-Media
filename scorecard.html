@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality Marketing Scorecard - Suite Life Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <img src="suite-life-logo.png" alt="Suite Life Media Logo Loading" onerror="this.style.display='none'">
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><img src="suite-life-logo.png" alt="Suite Life Media Logo"></a>
+            <div class="nav-links">
+                <a href="index.html#our-approach">Our Playbook</a>
+                <a href="scorecard.html">Free Scorecard</a>
+                <a href="story.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sticky Score Bar -->
+    <div class="score-display-container">
+        <div id="score-display" class="score-display">
+            <div class="score-text">
+                Your Score: <span id="score-value">0</span> / 20
+            </div>
+            <div class="progress-bar-background">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div id="score-feedback" class="score-feedback">
+                <span class="feedback-level">Foundation Work Needed</span>
+                <div id="opportunity-value-wrapper" class="opportunity-value-wrapper">
+                    Potential Uplift: +<span id="opportunity-value">0</span>%
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="scorecard-page-main">
+        <div class="scorecard-content-wrapper">
+            <div class="scorecard-header">
+                <h1>The Modern Hospitality Scorecard</h1>
+                <p>Are you following the best practices of today's top-performing hotels? Check off the items you're currently doing to get your live score and see where you stand.</p>
+            </div>
+
+            <div class="scorecard-grid">
+                <!-- Pillar 1 -->
+                <div class="scorecard-pillar">
+                    <h3>Engage & Expand</h3>
+                    <div class="scorecard-item" data-tooltip="Data: Consistent brands see up to 3x more engagement.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="5">
+                            <span class="custom-checkbox"></span>
+                            Post high-quality, on-brand content 3-5x per week.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Video generates 1200% more shares than text and images combined.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="7">
+                            <span class="custom-checkbox"></span>
+                            Make short-form video a core part of your content strategy.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Ads with UGC get 4x higher click-through rates.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="8">
+                            <span class="custom-checkbox"></span>
+                            Actively encourage and re-share guest-created content (UGC).
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: 71% of consumers are more likely to recommend brands that engage positively on social media.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="4">
+                            <span class="custom-checkbox"></span>
+                            Respond to social media comments and DMs within 24 hours.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Micro-influencers can have 60% higher engagement rates than larger accounts.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="6">
+                            <span class="custom-checkbox"></span>
+                            Collaborate with local businesses or micro-influencers quarterly.
+                        </label>
+                    </div>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="scorecard-pillar">
+                    <h3>Amplify & Convert</h3>
+                    <div class="scorecard-item" data-tooltip="Data: Retargeted visitors are 70% more likely to convert.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="10">
+                            <span class="custom-checkbox"></span>
+                            Run paid retargeting ads to recent website visitors.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Lookalike audiences can improve conversion rates by 3-5x.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="12">
+                            <span class="custom-checkbox"></span>
+                            Use guest data to create high-value "lookalike" audiences.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: This strategy can decrease customer acquisition cost by up to 40%.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="8">
+                            <span class="custom-checkbox"></span>
+                            Base ad creative on your top-performing organic content.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: The top 3 paid search results get 46% of all clicks.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="9">
+                            <span class="custom-checkbox"></span>
+                            Focus search ad budget on high-intent booking keywords.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Businesses that measure ROI are 3x more likely to achieve their goals.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="5">
+                            <span class="custom-checkbox"></span>
+                            Track ad-to-booking conversions and Return On Ad Spend.
+                        </label>
+                    </div>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="scorecard-pillar">
+                    <h3>Dazzle & Differentiate</h3>
+                    <div class="scorecard-item" data-tooltip="Data: 85% of consumers cite visuals as a primary factor in their purchase decision.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="3">
+                            <span class="custom-checkbox"></span>
+                            Use AI tools to enhance and upscale your photo & video assets.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: A/B testing ad creative can improve conversion rates significantly.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="6">
+                            <span class="custom-checkbox"></span>
+                            Rapidly test multiple ad creative variations to find winners.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: 76% of consumers are more likely to buy from brands that personalize.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="5">
+                            <span class="custom-checkbox"></span>
+                            Experiment with AI for personalized guest communications.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Teams using AI for ideation can increase viable concepts by over 50%.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="2">
+                            <span class="custom-checkbox"></span>
+                            Use AI as a brainstorming partner for new campaign concepts.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Consistent brand presentation can increase revenue by up to 23%.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="5">
+                            <span class="custom-checkbox"></span>
+                            Have a clear system to ensure brand consistency in all creative.
+                        </label>
+                    </div>
+                </div>
+                <!-- Pillar 4 -->
+                <div class="scorecard-pillar">
+                    <h3>Build Trust</h3>
+                    <div class="scorecard-item" data-tooltip="Data: 78% of consumers believe that a responsive hotel cares more about its guests.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="6">
+                            <span class="custom-checkbox"></span>
+                            Respond to all online reviews (positive & negative) within 48h.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Resolving a complaint in the customer's favor makes them 70% more likely to return.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="4">
+                            <span class="custom-checkbox"></span>
+                            Have a documented process for resolving negative reviews.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: 68% of consumers will leave a review for a business when asked.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="7">
+                            <span class="custom-checkbox"></span>
+                            Automatically send post-stay requests for reviews.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: Displaying reviews can increase conversion rates by up to 270%.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="9">
+                            <span class="custom-checkbox"></span>
+                            Showcase your best reviews in your website & marketing.
+                        </label>
+                    </div>
+                    <div class="scorecard-item" data-tooltip="Data: A 1-star rating increase can correlate with a 5-9% increase in revenue.">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scorecard-checkbox" data-value="9">
+                            <span class="custom-checkbox"></span>
+                            Share review feedback with operations to improve service.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scorecard-footer">
+                <h3>Ready to Improve Your Score?</h3>
+                <p>A higher score means more bookings and better guests. Let's build a plan to turn your opportunities into strengths.</p>
+                <a href="contact.html" class="cta-button large-cta">Book a Free Consultation</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Suite Life Media</p>
+    </footer>
+
+    <a href="contact.html" class="sticky-cta">Book a Consultation</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pre-loader logic
+            const preloader = document.getElementById('preloader');
+            const allLinks = document.querySelectorAll('a[href]');
+
+            window.addEventListener('load', () => {
+                document.body.classList.add('loaded');
+            });
+
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const target = this.getAttribute('target');
+
+                    if (href && href !== '#' && !href.startsWith('#') && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                        e.preventDefault();
+                        document.body.classList.remove('loaded');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 500); // Match CSS transition time
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.add('loaded');
+                }
+            });
+
+            // Hamburger Menu
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Scorecard Logic
+            const checkboxes = document.querySelectorAll('.scorecard-checkbox');
+            const scoreValueEl = document.getElementById('score-value');
+            const progressBarEl = document.getElementById('progress-bar');
+            const scoreDisplayEl = document.getElementById('score-display');
+            const feedbackLevelEl = document.querySelector('#score-feedback .feedback-level');
+            const opportunityWrapperEl = document.getElementById('opportunity-value-wrapper');
+            const opportunityValueEl = document.getElementById('opportunity-value');
+            const totalQuestions = checkboxes.length;
+
+            const scoreLevels = {
+                red: {
+                    level: 'Foundation Work Needed',
+                    color: '#E74C3C',
+                    bgColor: '#fdecec'
+                },
+                amber: {
+                    level: 'On the Right Track',
+                    color: '#F39C12',
+                    bgColor: '#fef5e7'
+                },
+                green: {
+                    level: 'Market Leader',
+                    color: '#2ECC71',
+                    bgColor: '#eafaf1'
+                }
+            };
+
+            function updateScore() {
+                const checkedCount = document.querySelectorAll('.scorecard-checkbox:checked').length;
+                let potentialGrowth = 0;
+
+                checkboxes.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        potentialGrowth += parseInt(checkbox.dataset.value, 10);
+                    }
+                });
+
+                scoreValueEl.textContent = checkedCount;
+                
+                const percentage = (checkedCount / totalQuestions) * 100;
+                progressBarEl.style.width = percentage + '%';
+
+                let currentLevel;
+                if (checkedCount <= 7) {
+                    currentLevel = scoreLevels.red;
+                } else if (checkedCount <= 14) {
+                    currentLevel = scoreLevels.amber;
+                } else {
+                    currentLevel = scoreLevels.green;
+                }
+
+                progressBarEl.style.backgroundColor = currentLevel.color;
+                feedbackLevelEl.textContent = currentLevel.level;
+                feedbackLevelEl.style.color = currentLevel.color;
+
+                if (checkedCount < totalQuestions && potentialGrowth > 0) {
+                    opportunityValueEl.textContent = potentialGrowth;
+                    opportunityWrapperEl.style.color = currentLevel.color;
+                    opportunityWrapperEl.style.backgroundColor = currentLevel.bgColor;
+                    opportunityWrapperEl.classList.add('visible');
+                } else {
+                    opportunityWrapperEl.classList.remove('visible');
+                }
+            }
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateScore);
+            });
+
+            updateScore();
+        });
+    </script>
+
+</body>
+</html>

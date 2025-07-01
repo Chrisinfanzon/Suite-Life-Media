@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Suite Life Media</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <img src="suite-life-logo.png" alt="Suite Life Media Logo Loading" onerror="this.style.display='none'">
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><img src="suite-life-logo.png" alt="Suite Life Media Logo"></a>
+            <div class="nav-links">
+                <a href="index.html#our-approach">Our Playbook</a>
+                <a href="scorecard.html">Free Scorecard</a>
+                <a href="story.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page-main">
+        <div id="contact-form-container">
+            <h1>Let's Start the Conversation</h1>
+            <p>We're excited to learn about your property. Fill out the form below and we'll be in touch shortly.</p>
+            
+            <form id="contactForm" action="https://formspree.io/f/your_unique_code" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Hotel / Company Name</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us a bit about your property and your goals</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button form-submit-button">Submit Details</button>
+            </form>
+        </div>
+
+        <div id="confirmation-message" style="display: none;">
+            <div class="confirmation-icon">✓</div>
+            <h2>Thanks for checking in!</h2>
+            <p>We've received your details and will be in touch shortly to discuss your property's bright future.</p>
+            <a href="index.html" class="cta-button">Return to Homepage</a>
+        </div>
+    </main>
+
+    <script>
+        // Pre-loader logic
+        const preloader = document.getElementById('preloader');
+        const allLinks = document.querySelectorAll('a[href]');
+
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const target = this.getAttribute('target');
+
+                if (href && href !== '#' && !href.startsWith('#') && target !== '_blank' && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                    e.preventDefault();
+                    document.body.classList.remove('loaded');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match CSS transition time
+                }
+            });
+        });
+
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                document.body.classList.add('loaded');
+            }
+        });
+
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const contactForm = document.getElementById("contactForm");
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var confirmationMessage = document.getElementById("confirmation-message");
+          var formContainer = document.getElementById("contact-form-container");
+          var data = new FormData(event.target);
+          
+          fetch(event.target.action, {
+            method: contactForm.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              confirmationMessage.style.display = 'block';
+              formContainer.style.display = 'none';
+              contactForm.reset();
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  alert(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                  alert("Oops! There was a problem submitting your form");
+                }
+              })
+            }
+          }).catch(error => {
+            alert("Oops! There was a problem submitting your form");
+          });
+        }
+        
+        contactForm.addEventListener("submit", handleSubmit)
+    </script>
+
+    <a href="contact.html" class="sticky-cta">Book a Consultation</a>
+    
+    <footer>
+        <p>&copy; 2025 Suite Life Media</p>
+    </footer>
+
+</body>
+</html>
